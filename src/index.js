@@ -1,5 +1,8 @@
 import './styles.css';
 
+// import libraries
+const _ = require('lodash');
+
 // import templates 
 const tmpltSearchForm = require('./templates/search-form.hbs');
 const tmpltGallery = require('./templates/gallery.hbs');
@@ -15,6 +18,7 @@ console.dir(tmpltImageCard({}));
 // views - количество просмотров
 // comments - количество комментариев
 // downloads - количество загрузок
+
 const rootRef = document.querySelector("body");
 console.log(rootRef);
 const searchFormRef = rootRef.querySelector("#search-form");
@@ -22,5 +26,15 @@ console.log(searchFormRef);
 const galleryRef = rootRef.querySelector("#gallery");
 console.log(galleryRef);
 
+function hndlSearchInput(event){
+// console.log(event.target.value);
+getImagesAsync(event.target.value).then(result=>{console.log(result)});
+}
 
-getImagesAsync("kitty").then(result=>{console.log(result)});
+const timeDebounce = 1000; // ms to wait after input puse
+const hndlSearchInputDebounced = _.debounce(hndlSearchInput, timeDebounce);
+
+
+searchFormRef.addEventListener("input", hndlSearchInputDebounced);
+
+

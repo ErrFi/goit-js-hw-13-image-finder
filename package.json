@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ErrFi/goit-js-hw-10-food-service.git"
+    "url": "git+https://github.com/ErrFi/goit-js-hw-13-image-finder.git"
   },
   "keywords": [],
   "author": "Nicolay Maryasov <maryasov.nicolay@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ErrFi/goit-js-hw-10-food-service/issues"
+    "url": "https://github.com/ErrFi/goit-js-hw-13-image-finder/issues"
   },
-  "homepage": "https://ErrFi.github.io/goit-js-hw-10-food-service",
+  "homepage": "https://ErrFi.github.io/goit-js-hw-13-image-finder",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
