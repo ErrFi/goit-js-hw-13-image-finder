@@ -1,32 +1,35 @@
 <!-- Шаблон элемента галереи изображений -->
+
+{{#each hits}}
 <li class="gallery-item">
   <div class="photo-card">
-    <img src="https://cdn.pixabay.com/photo/2016/07/10/21/47/cat-1508613_150.jpg" alt="#" />
+    <img class="card-image" src="{{this.webformatURL}}" alt="#" />
     <div class="stats">
       <p class="stats-item">
         <i class="material-icons">
           thumb_up
         </i>
-        1108
+        {{this.likes}}
       </p>
       <p class="stats-item">
         <i class="material-icons">
           visibility
         </i>
-        320321
+        {{this.views}}
       </p>
       <p class="stats-item">
         <i class="material-icons">
           comment
         </i>
-        129
+        {{comments}}
       </p>
       <p class="stats-item">
         <i class="material-icons">
           cloud_download
         </i>
-        176019
+        {{downloads}}
       </p>
     </div>
   </div>
 </li>
+{{/each}}
