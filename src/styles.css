@@ -29,6 +29,20 @@ body.dark-theme {
   background-color: #333333;
   color: #fff;
 }
+#endless-scroll-pointer{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  /* outline: 2px solid red; */
+  margin: 0px;
+}
+#load-more-pointer{
+  width: 100%;
+  height: 1px;
+  /* outline: 2px solid red; */
+  margin: 0px;
+  background-color: black;
+}
 .header{
   position: fixed;
   top: 0;
@@ -79,12 +93,17 @@ body.dark-theme {
   padding: 0rem 2rem;
   align-items: center;
   justify-content: center;
+
+  max-height: calc(100vh - 8rem);
+  overflow-y: scroll;
+  /* outline: 1px solid red; */
 }
 
 .gallery-item{
   display: block;
   width: calc((100% - 2*2rem - 3*1rem)/4);
-  height: 300px;
+  /* height: 300px; */
+  height: calc((100% - 2*1rem/3));
   margin: 0rem 1rem 1rem 0rem;
   padding: 0rem;
   background-color: wheat;

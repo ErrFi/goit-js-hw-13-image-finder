@@ -18,9 +18,9 @@ async function getDataAsync(search){
 // views - количество просмотров
 // comments - количество комментариев
 // downloads - количество загрузок
-export async function getImagesAsync(search, page=1){
+export async function getImagesAsync(search, page=1, per_page=12){
     try {
-       return await fetch(`https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${search}&page=${page}&per_page=12&key=${myPixabayAPIKey}`)
+       return await fetch(`https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${search}&page=${page}&per_page=${per_page}&key=${myPixabayAPIKey}`)
         .then(resp=>(resp.ok)
         ?resp.json()
         :Promise.reject('not found '+ resp.status))
