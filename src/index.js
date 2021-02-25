@@ -81,22 +81,26 @@ function hndlLoadMore(event, per_page=12){
         console.log(resp);    
 
         if(document.getElementById(scrollPointerID)!=null){document.getElementById(scrollPointerID).remove()};
+        loadMorePointerRef.remove();
         if(document.getElementById(loadMorePointerID)!=null){document.getElementById(loadMorePointerID).remove()};
 
       // add loadMorePointer>>>>>>>
         galleryRef.appendChild(loadMorePointerRef);
         
+        
       //  insert markup >>>>>>>>>>>>
         updateGalleryMarkup(resp);
         
         // scroll to loadMorePointer >>>>>>>>>>>>
-        loadMorePointerRef.scrollIntoView({block: "start", behavior: "smooth"});
+        loadMorePointerRef.scrollIntoView({block: "top", behavior: "smooth"});//true
+        
 
       // add scrollPointer for intersectObserver >>>>>>>
         galleryRef.appendChild(scrollPointerRef);
     
       return resp;
-      });
+      })
+      ;
     
 }
 function hndlEndlessScroll(event, per_page=12){
